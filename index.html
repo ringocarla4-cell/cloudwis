@@ -1,899 +1,777 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
-    <meta name="facebook-domain-verification" content="8e1sbjnx27fx0v3b5qb4092omrk9s1" />
-    <title>Cloudwis - Servicios de Alojamiento y Hospedaje</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="facebook-domain-verification" content="n8pupnot383w3rvyua4z0gapuch2el" />
+  <title>Cloudwis - Brillando con Estilo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;600;700;800;900&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .poppins {
+      font-family: 'Poppins', sans-serif;
+    }
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
+    .fredoka {
+      font-family: 'Fredoka', sans-serif;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(45deg, #1565c0, #1976d2);
-            color: white;
-            padding: 20px 0;
+    /* Cloudwis Purple Theme */
+    .shine-bg {
+      background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 25%, #C084FC 50%, #DDD6FE 75%, #F3E8FF 100%);
       position: relative;
       overflow: hidden;
     }
     
-        header::before {
+    .shine-bg::before {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .header-content {
-            text-align: center;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(139, 92, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(192, 132, 252, 0.2) 0%, transparent 50%);
+      opacity: 0.8;
+      z-index: 1;
+    }
+    
+    .shine-content {
       position: relative;
       z-index: 2;
-            padding: 80px 0;
-        }
+    }
+    
+    /* Purple color scheme */
+    .text-purple {
+      color: #8B5CF6;
+    }
+    
+    .text-light-purple {
+      color: #A855F7;
+    }
+    
+    .text-pink {
+      color: #EC4899;
+    }
+    
+    .text-white-title {
+      color: #FFFFFF;
+      font-weight: 900;
+    }
 
-        .logo {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            letter-spacing: 2px;
-        }
-
-        .logo-subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        .tagline {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-            opacity: 0.95;
-        }
-
-        /* Navigation */
-        nav {
-            background: rgba(21, 101, 192, 0.95);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.1);
-            color: #00bcd4;
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 20px;
-            color: #1565c0;
-            font-weight: 700;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 60px;
-            font-style: italic;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-            margin-top: 40px;
-        }
-
-        .about-text {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: #555;
-            text-align: justify;
-        }
-
-        .experience-highlight {
-            background: linear-gradient(45deg, #00bcd4, #00acc1);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .experience-highlight h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        /* Suites Section */
-        .suites-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .suites-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .suite-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .suite-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .suite-image {
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .suite-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .suite-card:hover .suite-image img {
-            transform: scale(1.05);
-        }
-
-        .suite-content {
-            padding: 30px;
-        }
-
-        .suite-content h3 {
-            font-size: 1.4rem;
-            color: #1565c0;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .suite-content p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .suite-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .feature {
-            background: #00bcd4;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-        .services-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .service-card {
-            background: #f8f9fa;
-            padding: 40px 30px;
-            border-radius: 10px;
-            border-left: 5px solid #00bcd4;
-            transition: all 0.3s ease;
-            height: auto;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .service-card h3 {
-            font-size: 1.4rem;
-            color: #1565c0;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .service-list {
-            list-style: none;
-        }
-
-        .service-list li {
-            padding: 8px 0;
-            color: #555;
-            border-bottom: 1px solid #eee;
+    /* Modern cards with sparkle effect */
+    .shine-card {
+      background: linear-gradient(145deg, rgba(139, 92, 246, 0.9), rgba(168, 85, 247, 0.2));
+      border: 2px solid #8B5CF6;
+      backdrop-filter: blur(20px);
+      box-shadow: 
+        0 0 30px rgba(139, 92, 246, 0.3),
+        inset 0 0 30px rgba(139, 92, 246, 0.1);
+      transition: all 0.4s ease;
       position: relative;
-            padding-left: 20px;
-        }
-
-        .service-list li:before {
-            content: "•";
-            color: #00bcd4;
-            font-weight: bold;
+      overflow: hidden;
+    }
+    
+    .shine-card::before {
+      content: '';
       position: absolute;
-            left: 0;
-        }
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, #8B5CF6, #A855F7, #EC4899, #8B5CF6);
+      background-size: 400% 400%;
+      animation: sparkleGlow 3s ease infinite;
+      z-index: -1;
+      border-radius: inherit;
+    }
+    
+    .shine-card:hover {
+      transform: translateY(-15px) scale(1.03);
+      box-shadow: 
+        0 25px 50px rgba(139, 92, 246, 0.4),
+        0 0 40px rgba(168, 85, 247, 0.3);
+      border-color: #A855F7;
+    }
 
-        .service-list li:last-child {
-            border-bottom: none;
-        }
+    @keyframes sparkleGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        /* Three Column Services Layout */
-        .services-overview {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .service-overview-card {
-            background: linear-gradient(45deg, #1565c0, #1976d2);
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .service-overview-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #00bcd4;
-        }
-
-        .service-overview-card ul {
-            list-style: none;
-            text-align: left;
-        }
-
-        .service-overview-card li {
-            padding: 5px 0;
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        /* Team Section */
-        .team-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .team-member {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .team-member:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .team-member img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid #00bcd4;
-        }
-
-        .team-member h4 {
-            font-size: 1.3rem;
-            color: #1565c0;
-            margin-bottom: 5px;
-        }
-
-        .team-member .position {
-            color: #00bcd4;
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .team-member .quote {
-            font-style: italic;
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 80px 0;
-            background: linear-gradient(45deg, #1565c0, #1976d2);
-            color: white;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            margin-top: 40px;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-            color: #00bcd4;
-        }
-
-        .contact-item {
+    /* Sparkle icons */
+    .shine-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(45deg, #8B5CF6, #A855F7);
+      border-radius: 20px;
       display: flex;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-        }
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    }
 
-        .contact-item i {
-            color: #00bcd4;
-            margin-right: 15px;
-            margin-top: 3px;
-            width: 20px;
-        }
+    /* Fun grid pattern */
+    .sparkle-bg {
+      background-image: 
+        linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+      position: relative;
+    }
+    
+    .sparkle-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(168, 85, 247, 0.2) 2px, transparent 2px),
+        radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.2) 2px, transparent 2px);
+      background-size: 40px 40px;
+    }
 
-        .contact-item span {
-            line-height: 1.6;
-        }
+    /* Bouncy animations */
+    .bounce-animation {
+      animation: bounce 2s ease-in-out infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
 
-        .business-hours {
-            background: rgba(255,255,255,0.1);
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 30px;
-        }
+    /* Sparkle pulse */
+    .pulse-purple {
+      animation: pulseSparkle 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulseSparkle {
+      0%, 100% { 
+        box-shadow: 0 0 20px #8B5CF6, 0 0 40px #8B5CF6;
+        border-color: #8B5CF6;
+      }
+      50% { 
+        box-shadow: 0 0 30px #A855F7, 0 0 60px #A855F7;
+        border-color: #A855F7;
+      }
+    }
 
-        .business-hours h4 {
-            color: #00bcd4;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
+    /* Fun panels */
+    .fun-panel {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.8) 0%, rgba(168, 85, 247, 0.3) 100%);
+      border-left: 4px solid #8B5CF6;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .fun-panel:hover {
+      transform: translateX(10px) rotate(1deg);
+      border-left-color: #A855F7;
+      box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+    }
 
-        .business-hours p {
-            margin-bottom: 10px;
-            line-height: 1.6;
-        }
+    /* Rainbow wave effect */
+    .rainbow-wave {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 98px,
+        rgba(139, 92, 246, 0.05) 100px
+      );
+      animation: rainbowFlow 15s linear infinite;
+    }
+    
+    @keyframes rainbowFlow {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
 
-        .business-hours strong {
-            color: #00bcd4;
-        }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #8B5CF6;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #8B5CF6, #A855F7);
+      border-radius: 5px;
+    }
 
-        /* Footer */
-        footer {
-            background: #1a252f;
-            color: white;
-            text-align: center;
-            padding: 40px 0;
-        }
+    /* WhatsApp button with sparkle */
+    .whatsapp-sparkle {
+      background: linear-gradient(135deg, #25d366, #128c7e, #8B5CF6);
+      animation: sparklePulse 2s infinite;
+      border: 2px solid #8B5CF6;
+      box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+    }
+    
+    @keyframes sparklePulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 35px rgba(168, 85, 247, 0.7);
+      }
+    }
 
-        footer p {
-            margin-bottom: 10px;
-            opacity: 0.8;
-        }
+    /* Fun typing effect */
+    .fun-typing {
+      overflow: hidden;
+      border-right: 3px solid #8B5CF6;
+      white-space: nowrap;
+      animation: typing 4s steps(50, end), blink-cursor 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink-cursor {
+      from, to { border-color: transparent; }
+      50% { border-color: #8B5CF6; }
+    }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 2.5rem;
-            }
+    /* Fun button effects */
+    .btn-shine {
+      background: linear-gradient(135deg, #8B5CF6, #A855F7);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn-shine::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .btn-shine:hover::before {
+      left: 100%;
+    }
+    
+    .btn-shine:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+    }
 
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
-            }
+    /* Floating sparkles */
+    .sparkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #F3E8FF;
+      border-radius: 50%;
+      animation: sparkleFloat 3s ease-in-out infinite;
+    }
 
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
+    @keyframes sparkleFloat {
+      0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 0.7;
+      }
+      50% { 
+        transform: translateY(-20px) rotate(180deg);
+        opacity: 1;
+      }
+    }
 
-            .services-overview {
-                grid-template-columns: 1fr;
-            }
+    /* Fun emoji animations */
+    .emoji-bounce {
+      animation: emojiBounce 1.5s ease-in-out infinite;
+    }
 
-            .suites-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .suite-card {
-                margin-bottom: 20px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .header-content {
-                padding: 40px 0;
-            }
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Additional styling to match cloudwis theme */
-        .highlight-text {
-            color: #00bcd4;
-            font-weight: 600;
-        }
-
-        .mission-section {
-            background: linear-gradient(45deg, #00bcd4, #00acc1);
-            color: white;
-            padding: 40px;
-            border-radius: 10px;
-            margin: 40px 0;
-            text-align: center;
-        }
-
-        .mission-section h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        /* WhatsApp Button */
-        .whatsapp-float {
-            position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 20px;
-            right: 20px;
-            background-color: #25d366;
-            color: white;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            background-color: #128c7e;
-            transform: scale(1.1);
-            color: white;
-            text-decoration: none;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
-            }
-            100% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
-        /* Responsive WhatsApp button */
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                width: 55px;
-                height: 55px;
-                font-size: 26px;
-                bottom: 15px;
-                right: 15px;
-            }
-        }
+    @keyframes emojiBounce {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.1) rotate(5deg); }
+      75% { transform: scale(1.1) rotate(-5deg); }
+    }
   </style>
 </head>
-<body>
-    <!-- Header -->
-    <header id="home">
-        <div class="container">
-            <div class="header-content">
-                <h1 class="logo">CLOUDWIS</h1>
-                <p class="logo-subtitle">Servicios de Alojamiento y Hospedaje</p>
-                <p class="tagline">Tu hogar lejos del hogar. Ofrecemos servicios de alojamiento cómodos y seguros en San Pedro.</p>
+<body class="bg-slate-900 text-white overflow-x-hidden">
+
+  <!-- RAINBOW WAVE BACKGROUND -->
+  <div class="rainbow-wave fixed inset-0 pointer-events-none z-0"></div>
+
+  <!-- SPARKLE HEADER -->
+  <header class="shine-bg min-h-screen flex items-center relative">
+    <div class="shine-content w-full">
+      
+      <!-- Fun Navigation -->
+      <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-xl border-b-2 border-purple-600">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+          <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <div class="flex items-center">
+              <div class="shine-icon mr-4 pulse-purple">
+                <div class="text-white font-bold text-2xl emoji-bounce">✨</div>
+              </div>
+              <span class="text-2xl font-black fredoka text-white-title">CLOUDWIS</span>
+            </div>
+            
+            <!-- Menu -->
+            <ul class="hidden md:flex space-x-8 text-purple-400 font-bold fredoka">
+              <li><a href="#inicio" class="hover:text-purple-600 transition duration-300 relative group">
+                  INICIO
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#nosotros" class="hover:text-purple-600 transition duration-300 relative group">
+                  NOSOTROS
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#servicios" class="hover:text-purple-600 transition duration-300 relative group">
+                  SERVICIOS
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+              <li><a href="#contacto" class="hover:text-purple-600 transition duration-300 relative group">
+                  CONTACTO
+                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-purple-600 group-hover:w-full transition-all duration-300"></span>
+            </a></li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="max-w-7xl mx-auto px-6 py-20 mt-20">
+        <div class="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+          
+          <!-- Left Content -->
+            <div class="text-center lg:text-left">
+            <div class="mb-8">
+              <h1 class="text-7xl md:text-8xl font-black fredoka bounce-animation mb-4">
+                <span class="text-white-title">CLOUDWIS</span>
+              </h1>
+              <div class="fun-typing text-2xl md:text-3xl text-purple-400 font-bold">
+                BRILLANDO CON ESTILO Y DIVERSIÓN
+              </div>
+              </div>
+              
+            <!-- Fun Stats -->
+            <div class="grid grid-cols-2 gap-6 mb-12">
+              <div class="shine-card p-6 rounded-xl">
+                <div class="text-4xl text-purple mb-2 fredoka font-black">✨</div>
+                <div class="text-gray-300">MAGIA</div>
+              </div>
+              <div class="shine-card p-6 rounded-xl">
+                <div class="text-4xl text-light-purple mb-2 fredoka font-black">🎉</div>
+                <div class="text-gray-300">DIVERSIÓN</div>
+              </div>
+              <div class="shine-card p-6 rounded-xl">
+                <div class="text-4xl text-pink mb-2 fredoka font-black">💫</div>
+                <div class="text-gray-300">ESTILO</div>
+              </div>
+              <div class="shine-card p-6 rounded-xl">
+                <div class="text-4xl text-purple mb-2 fredoka font-black">🌟</div>
+                <div class="text-gray-300">BRILLO</div>
+              </div>
+            </div>
+
+            <!-- CTA Button -->
+            <button class="btn-shine px-12 py-6 rounded-xl text-xl font-bold fredoka text-white border-2 border-purple-600 transition-all duration-300">
+              DESCUBRIR MAGIA
+            </button>
+          </div>
+
+          <!-- Right Content - Fun Image -->
+            <div class="relative">
+            <div class="shine-card p-8 rounded-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80" 
+                alt="Cloudwis - Brillando con estilo" 
+                class="w-full h-96 object-cover rounded-lg"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-purple-600/20 via-transparent to-purple-400/20 rounded-2xl"></div>
+              </div>
+            
+            <!-- Floating sparkles -->
+            <div class="absolute -top-6 -right-6 shine-icon pulse-purple">
+              <div class="text-white font-bold text-xl emoji-bounce">✨</div>
+              </div>
+            <div class="absolute -bottom-6 -left-6 shine-icon pulse-purple" style="animation-delay: 1s;">
+              <div class="text-white font-bold text-xl emoji-bounce">🎨</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="nav-content">
-                <ul class="nav-links">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#about">Nosotros</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#suites">Suites</a></li>
-                    <li><a href="#team">Equipo</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </div>
+  <!-- ABOUT SECTION - FUN GRID DESIGN -->
+  <section id="nosotros" class="sparkle-bg py-32 bg-slate-800 relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+        <h2 class="text-6xl font-black fredoka text-purple bounce-animation mb-8">QUIÉNES SOMOS</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto"></div>
+      </div>
+      
+      <!-- Fun panels layout -->
+      <div class="grid lg:grid-cols-3 gap-8">
+        
+        <!-- Panel 1 -->
+        <div class="fun-panel p-8 rounded-xl">
+          <div class="shine-icon mb-6 mx-auto">
+            <div class="text-white font-bold text-2xl emoji-bounce">🎯</div>
+          </div>
+          <h3 class="text-2xl font-bold fredoka text-purple mb-4">MISIÓN</h3>
+          <p class="text-gray-300">Crear experiencias únicas y divertidas que hagan brillar a cada persona, combinando creatividad, estilo y mucha diversión en todo lo que hacemos.</p>
         </div>
-    </nav>
+        
+        <!-- Panel 2 -->
+        <div class="fun-panel p-8 rounded-xl">
+          <div class="shine-icon mb-6 mx-auto">
+            <div class="text-white font-bold text-2xl emoji-bounce">🌈</div>
+            </div>
+          <h3 class="text-2xl font-bold fredoka text-light-purple mb-4">VISIÓN</h3>
+          <p class="text-gray-300">Ser la empresa líder en crear momentos mágicos y experiencias inolvidables, donde cada cliente se sienta especial y brillante.</p>
+        </div>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">¿Por qué elegir Cloudwis?</h2>
-            <div class="about-content">
-                <div>
-                    <p class="about-text">
-                        Somos Cloudwis, una empresa especializada en servicios de alojamiento y hospedaje en San Pedro. Ofrecemos soluciones integrales para huéspedes que buscan comodidad, seguridad y la mejor experiencia durante su estadía. Nuestro compromiso es brindar un servicio personalizado que haga que cada huésped se sienta como en casa.
-                    </p>
-                    <p class="about-text">
-                        Contamos con una amplia red de propiedades cuidadosamente seleccionadas y verificadas en la ciudad. Nuestro equipo profesional se encarga de gestionar todos los aspectos del alojamiento para garantizar una experiencia memorable y sin complicaciones.
-                    </p>
-                </div>
-                <div>
-                    <div class="experience-highlight">
-                        <h3>Tecnología avanzada</h3>
-              </div>
-                    <p class="about-text">
-                        Ofrecemos servicios integrales a través de nuestro <strong class="highlight-text">SISTEMA DE ATENCIÓN COMPLETA</strong> para todas las necesidades de alojamiento. Somos referentes en hospitalidad y atención al huésped en San Pedro.
-                    </p>
-                    <div class="mission-section">
-                        <h3>Nuestra Misión</h3>
-                        <p>Brindar el mejor servicio de alojamiento al mejor precio posible, sin comprometer la calidad, comodidad y seguridad de nuestros huéspedes en San Pedro</p>
+        <!-- Panel 3 -->
+        <div class="fun-panel p-8 rounded-xl">
+          <div class="shine-icon mb-6 mx-auto">
+            <div class="text-white font-bold text-2xl emoji-bounce">💎</div>
           </div>
-          </div>
+          <h3 class="text-2xl font-bold fredoka text-pink mb-4">VALORES</h3>
+          <p class="text-gray-300">Creatividad sin límites, diversión auténtica, calidad excepcional y el compromiso de hacer que cada día sea especial para nuestros clientes.</p>
+        </div>
+      </div>
+      
+      <!-- Central Image -->
+      <div class="flex justify-center mt-16">
+        <div class="shine-card p-6 rounded-2xl">
+          <img 
+            src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Cloudwis - Equipo creativo" 
+            class="w-full max-w-2xl h-64 object-cover rounded-lg"
+          />
+        </div>
         </div>
       </div>
     </section>
 
-    <!-- Suites Section -->
-    <section id="suites" class="suites-section">
-        <div class="container">
-            <h2 class="section-title">Nuestras Suites</h2>
-            <p class="section-subtitle">Descubre nuestras opciones de alojamiento premium en San Pedro</p>
-            
-            <div class="suites-grid">
-                <div class="suite-card">
-                    <div class="suite-image">
-                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=400&h=250&fit=crop" alt="Suite Presidencial">
-                    </div>
-                    <div class="suite-content">
-                        <h3>Suite Presidencial</h3>
-                        <p>La máxima expresión de lujo y comodidad. Suite presidencial con todas las comodidades y servicios premium en el corazón de San Pedro.</p>
-                        <div class="suite-features">
-                            <span class="feature">3 habitaciones</span>
-                            <span class="feature">2 baños</span>
-                            <span class="feature">Balcón privado</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="suite-card">
-                    <div class="suite-image">
-                        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&h=250&fit=crop" alt="Suite Ejecutiva">
-                    </div>
-                    <div class="suite-content">
-                        <h3>Suite Ejecutiva</h3>
-                        <p>Ideal para ejecutivos y viajeros de negocios. Suite moderna con todas las comodidades necesarias para una estadía productiva.</p>
-                        <div class="suite-features">
-                            <span class="feature">2 habitaciones</span>
-                            <span class="feature">1 baño</span>
-                            <span class="feature">Oficina privada</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="suite-card">
-                    <div class="suite-image">
-                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=250&fit=crop" alt="Suite Familiar">
-                    </div>
-                    <div class="suite-content">
-                        <h3>Suite Familiar</h3>
-                        <p>Perfecta para familias y grupos grandes. Suite espaciosa con todas las comodidades necesarias para una estadía confortable.</p>
-                        <div class="suite-features">
-                            <span class="feature">4 habitaciones</span>
-                            <span class="feature">2 baños</span>
-                            <span class="feature">Sala de estar</span>
-                        </div>
-                    </div>
-                </div>
+  <!-- SERVICES SECTION - FUN GRID DESIGN -->
+  <section id="servicios" class="bg-slate-900 py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-6xl font-black fredoka text-purple bounce-animation mb-8">NUESTROS SERVICIOS</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto"></div>
+      </div>
+      
+      <!-- Fun Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Service 1 -->
+        <div class="shine-card p-8 rounded-2xl group">
+          <div class="shine-icon mb-6">
+            <div class="text-white font-bold text-xl emoji-bounce">🎨</div>
             </div>
-        </div>
-    </section>
-    <section id="services" class="services-section">
-        <div class="container">
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title">Servicios</h2>
-            <p class="section-subtitle">Todo lo que necesitas para tu estadía perfecta</p>
-
-            <!-- Three Column Overview -->
-            <div class="services-overview">
-                <div class="service-overview-card">
-                    <h4>Alojamiento Temporal</h4>
-                    <ul>
-                        <li>Habitaciones individuales y compartidas</li>
-                        <li>Departamentos completamente equipados</li>
-                        <li>Estadías cortas y prolongadas</li>
-                        <li>Ubicaciones estratégicas en San Pedro</li>
-                        <li>Precios competitivos y flexibles</li>
-                    </ul>
-              </div>
-                <div class="service-overview-card">
-                    <h4>Servicios Adicionales</h4>
-                    <ul>
-                        <li>Limpieza y mantenimiento</li>
-                        <li>Ropa de cama y toallas</li>
-                        <li>WiFi de alta velocidad</li>
-                        <li>Servicio de recepción 24/7</li>
-                        <li>Asistencia turística</li>
-                    </ul>
-            </div>
-                <div class="service-overview-card">
-                    <h4>Comodidades</h4>
-                    <ul>
-                        <li>Cocina completamente equipada</li>
-                        <li>Aire acondicionado y calefacción</li>
-                        <li>TV por cable e internet</li>
-                        <li>Seguridad las 24 horas</li>
-                        <li>Estacionamiento disponible</li>
-                    </ul>
+            <img 
+            src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Diseño creativo y artístico" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold fredoka text-purple mb-4">DISEÑO CREATIVO</h3>
+          <p class="text-gray-300 mb-4">Creamos diseños únicos y originales que reflejan tu personalidad y estilo, con un toque de magia y mucha creatividad.</p>
+          <div class="flex items-center text-purple-400">
+            <span class="mr-2">✨</span>
+            <span class="text-sm font-bold">CREATIVIDAD SIN LÍMITES</span>
+          </div>
+          </div>
+        
+        <!-- Service 2 -->
+        <div class="shine-card p-8 rounded-2xl group">
+          <div class="shine-icon mb-6">
+            <div class="text-white font-bold text-xl emoji-bounce">🎉</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Eventos y celebraciones" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold fredoka text-light-purple mb-4">EVENTOS MÁGICOS</h3>
+          <p class="text-gray-300 mb-4">Organizamos eventos inolvidables llenos de diversión, color y momentos especiales que quedarán en la memoria para siempre.</p>
+          <div class="flex items-center text-purple-500">
+            <span class="mr-2">🎊</span>
+            <span class="text-sm font-bold">MOMENTOS INOLVIDABLES</span>
           </div>
       </div>
       
-            <!-- Detailed Services -->
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Alojamiento Residencial</h3>
-                    <p>Ofrecemos una amplia variedad de opciones de alojamiento para satisfacer todas las necesidades de nuestros huéspedes en El Zapallar:</p>
-                    <ul class="service-list">
-                        <li>Habitaciones privadas con baño propio</li>
-                        <li>Habitaciones compartidas con servicios comunes</li>
-                        <li>Departamentos completamente amoblados</li>
-                        <li>Estudios para estadías prolongadas</li>
-                        <li>Alojamiento familiar y para grupos</li>
-                        <li>Opciones pet-friendly disponibles</li>
-                        <li>Ubicaciones cerca del centro y puntos de interés</li>
-                        <li>Transporte público accesible</li>
-                        <li>Ambientes seguros y confortables</li>
-                        <li>Precios accesibles para todos los presupuestos</li>
-                        <li>Contratos flexibles según necesidades</li>
-                    </ul>
+        <!-- Service 3 -->
+        <div class="shine-card p-8 rounded-2xl group">
+          <div class="shine-icon mb-6">
+            <div class="text-white font-bold text-xl emoji-bounce">💫</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Consultoría de estilo" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold fredoka text-pink mb-4">CONSULTORÍA DE ESTILO</h3>
+          <p class="text-gray-300 mb-4">Te ayudamos a encontrar tu estilo único y a brillar con confianza en cada situación, con consejos personalizados y divertidos.</p>
+          <div class="flex items-center text-purple-400">
+            <span class="mr-2">🌟</span>
+            <span class="text-sm font-bold">ESTILO PERSONALIZADO</span>
+          </div>
           </div>
           
-                <div class="service-card">
-                    <h3>Gestión y Mantenimiento</h3>
-                    <p>Nos encargamos de todos los aspectos de gestión y mantenimiento para garantizar que tu estadía sea perfecta desde el primer día:</p>
-                    <ul class="service-list">
-                        <li>Inspección y verificación de propiedades</li>
-                        <li>Limpieza profunda antes del ingreso</li>
-                        <li>Mantenimiento preventivo y correctivo</li>
-                        <li>Gestión de servicios públicos</li>
-                        <li>Atención de emergencias 24/7</li>
-                    </ul>
+        <!-- Service 4 -->
+        <div class="shine-card p-8 rounded-2xl group">
+          <div class="shine-icon mb-6">
+            <div class="text-white font-bold text-xl emoji-bounce">🎭</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2134&q=80" 
+            alt="Talleres creativos" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold fredoka text-purple mb-4">TALLERES CREATIVOS</h3>
+          <p class="text-gray-300 mb-4">Talleres divertidos donde puedes aprender nuevas habilidades, expresar tu creatividad y conocer gente increíble.</p>
+          <div class="flex items-center text-purple-400">
+            <span class="mr-2">🎨</span>
+            <span class="text-sm font-bold">APRENDER DIVIRTIÉNDOSE</span>
+          </div>
           </div>
           
-                <div class="service-card">
-                    <h3>Servicios Complementarios</h3>
-                    <p>Ofrecemos servicios adicionales para hacer tu estadía aún más cómoda y placentera:</p>
-                    <ul class="service-list">
-                        <li>Asesoramiento turístico personalizado</li>
-                        <li>Reservas de actividades y excursiones</li>
-                        <li>Servicio de traslados desde/hacia aeropuerto</li>
-                        <li>Recomendaciones gastronómicas locales</li>
-                    </ul>
+        <!-- Service 5 -->
+        <div class="shine-card p-8 rounded-2xl group">
+          <div class="shine-icon mb-6">
+            <div class="text-white font-bold text-xl emoji-bounce">📸</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1554048612-b6a482b5c2b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2015&q=80" 
+            alt="Sesiones de fotos" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold fredoka text-light-purple mb-4">SESIONES DE FOTOS</h3>
+          <p class="text-gray-300 mb-4">Capturamos momentos especiales con un estilo único y divertido, creando recuerdos que brillarán para siempre.</p>
+          <div class="flex items-center text-purple-500">
+            <span class="mr-2">📷</span>
+            <span class="text-sm font-bold">RECUERDOS ÚNICOS</span>
+          </div>
+          </div>
+          
+        <!-- Service 6 -->
+        <div class="shine-card p-8 rounded-2xl group">
+          <div class="shine-icon mb-6">
+            <div class="text-white font-bold text-xl emoji-bounce">🎁</div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+            alt="Productos especiales" 
+            class="w-full h-48 object-cover rounded-lg mb-6"
+          />
+          <h3 class="text-2xl font-bold fredoka text-pink mb-4">PRODUCTOS ESPECIALES</h3>
+          <p class="text-gray-300 mb-4">Ofrecemos productos únicos y especiales que te ayudarán a brillar y expresar tu personalidad de manera auténtica.</p>
+          <div class="flex items-center text-purple-400">
+            <span class="mr-2">💎</span>
+            <span class="text-sm font-bold">PRODUCTOS ÚNICOS</span>
+          </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="team-section">
-        <div class="container">
-            <h2 class="section-title">Conoce el equipo Cloudwis</h2>
-            
-            <div class="team-grid">
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Carlos Cloudwis">
-                    <h4>Carlos Cloudwis</h4>
-                    <p class="position">Director General</p>
-                    <p class="quote">"Nuestro compromiso es hacer que cada huésped se sienta como en casa, brindando comodidad y calidez en cada detalle"</p>
+  <!-- TESTIMONIALS - FUN DESIGN -->
+  <section class="shine-bg py-32 relative">
+      <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20">
+        <h2 class="text-6xl font-black fredoka text-light-purple bounce-animation mb-8">LO QUE DICEN NUESTROS CLIENTES</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-purple-400 to-purple-600 mx-auto"></div>
+            </div>
+      
+      <!-- Fun testimonials -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="shine-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-purple-400 mr-4" 
+              src="https://randomuser.me/api/portraits/women/32.jpg" 
+              alt="Sofía Martínez"
+            />
+            <div>
+              <h4 class="font-bold fredoka text-purple text-lg">Sofía Martínez</h4>
+              <p class="text-purple-400 text-sm">Cliente Feliz</p>
+                </div>
+              </div>
+          <p class="text-gray-300 italic">"Cloudwis transformó mi evento en algo mágico. La creatividad y diversión que aportaron fue increíble. ¡Totalmente recomendado!"</p>
+              <div class="flex mt-4">
+            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+
+        <div class="shine-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-pink-400 mr-4" 
+              src="https://randomuser.me/api/portraits/men/42.jpg" 
+              alt="Diego Rodríguez"
+            />
+            <div>
+              <h4 class="font-bold fredoka text-light-purple text-lg">Diego Rodríguez</h4>
+              <p class="text-purple-400 text-sm">Cliente Satisfecho</p>
+                </div>
+              </div>
+          <p class="text-gray-300 italic">"Los talleres de Cloudwis son pura diversión. Aprendí mucho y me divertí aún más. Una experiencia única y especial."</p>
+              <div class="flex mt-4">
+            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+              </div>
+            </div>
+
+        <div class="shine-card p-8 rounded-2xl">
+              <div class="flex items-center mb-6">
+                <img 
+              class="w-16 h-16 rounded-full border-4 border-purple-500 mr-4" 
+              src="https://randomuser.me/api/portraits/women/24.jpg" 
+              alt="Lucía Fernández"
+            />
+            <div>
+              <h4 class="font-bold fredoka text-pink text-lg">Lucía Fernández</h4>
+              <p class="text-purple-400 text-sm">Cliente Encantada</p>
+            </div>
           </div>
-
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b332c1ee?w=150&h=150&fit=crop&crop=face" alt="Ana Cloudwis">
-                    <h4>Ana Cloudwis</h4>
-                    <p class="position">Gerente de Operaciones</p>
-                    <p class="quote">"La excelencia en el servicio se logra con atención a los detalles y pasión por la hospitalidad"</p>
-            </div>
-
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=150&h=150&fit=crop&crop=face" alt="María Cloudwis">
-                    <h4>María Cloudwis</h4>
-                    <p class="position">Coordinadora de Alojamiento</p>
-                    <p class="quote">"Cada propiedad es cuidadosamente seleccionada para garantizar la mejor experiencia de nuestros huéspedes"</p>
-            </div>
-
-                <div class="team-member">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Diego Cloudwis">
-                    <h4>Diego Cloudwis</h4>
-                    <p class="position">Especialista en Atención al Cliente</p>
-                    <p class="quote">"Estamos disponibles 24/7 para asegurar que tu estadía sea perfecta desde el primer momento"</p>
+          <p class="text-gray-300 italic">"La sesión de fotos con Cloudwis fue increíble. Me ayudaron a sentirme segura y a brillar. Los resultados fueron espectaculares."</p>
+          <div class="flex mt-4">
+            <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+          </div>
         </div>
       </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">¿Tienes alguna consulta?</h2>
-            
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Ubicación de la Oficina</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Almafuerte 2536, San Pedro</span>
+  <!-- CONTACT FOOTER - FUN DESIGN -->
+  <footer id="contacto" class="bg-slate-900 text-white py-20 border-t-2 border-purple-600">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12 mb-16">
+        
+        <!-- Company Info -->
+        <div class="md:col-span-1">
+          <div class="flex items-center mb-8">
+            <div class="shine-icon mr-4 pulse-purple">
+              <div class="text-white font-bold text-xl emoji-bounce">✨</div>
+            </div>
+            <h3 class="text-4xl font-bold fredoka text-white-title">CLOUDWIS</h3>
+          </div>
+          <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+Tu empresa de confianza para crear momentos mágicos y experiencias inolvidables. Hacemos que cada día sea especial con creatividad, diversión y mucho brillo.
+          </p>
+          <div class="flex space-x-4">
+            <div class="w-12 h-12 shine-card rounded-full flex items-center justify-center">
+              <span class="text-purple-400 emoji-bounce">✨</span>
+            </div>
+            <div class="w-12 h-12 shine-card rounded-full flex items-center justify-center">
+              <span class="text-purple-500 emoji-bounce">🎨</span>
+            </div>
+            <div class="w-12 h-12 shine-card rounded-full flex items-center justify-center">
+              <span class="text-purple-600 emoji-bounce">🎉</span>
+            </div>
+          </div>
         </div>
         
-                    <h3>Información de Contacto</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+5491164584704</span>
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-2xl font-bold fredoka text-light-purple mb-8">CONTACTO DIRECTO</h4>
+          <div class="space-y-6 text-gray-300">
+            <div class="flex items-start space-x-4">
+              <div class="shine-icon">
+                <div class="text-white text-sm">📍</div>
+              </div>
+              <span>Salta 331, Ramos Mejia</span>
             </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>cloudwis@gmail.com</span>
-          </div>
-                    <div class="contact-item">
-                        <i class="fas fa-id-card"></i>
-                        <span>CUIL: 27425735263</span>
+            <div class="flex items-center space-x-4">
+              <div class="shine-icon">
+                <div class="text-white text-sm">📞</div>
+              </div>
+              <a href="tel:+5491164584704" class="hover:text-purple-400 transition text-lg font-bold fredoka">+5491164584704</a>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="shine-icon">
+                <div class="text-white text-sm">✉️</div>
+              </div>
+              <a href="mailto:info@cloudwis.com" class="hover:text-purple-400 transition">info@cloudwis.com</a>
+            </div>
+            <div class="flex items-center space-x-4">
+              <div class="shine-icon">
+                <div class="text-white text-sm">🏢</div>
+              </div>
+              <span>CUIL: 27552032069</span>
+            </div>
           </div>
         </div>
         
-                <div class="contact-info">
-                    <div class="business-hours">
-                        <h4>Horarios de Atención</h4>
-                        <p><strong>Días de atención:</strong></p>
-                        <p>Lunes a Viernes: 9:00 a 18:00 hs</p>
-                        <p>Sábados: 9:00 a 15:00 hs</p>
-                        <br>
-                        <p><strong>Atención de emergencias:</strong></p>
-                        <p>Disponible 24/7</p>
-                        <p>WhatsApp: +5491164584704</p>
+        <!-- Operating Hours -->
+        <div>
+          <h4 class="text-2xl font-bold fredoka text-purple-400 mb-8">HORARIOS DE ATENCIÓN</h4>
+          <div class="space-y-4 text-gray-300">
+            <div class="shine-card p-4 rounded-lg">
+              <p class="font-bold text-purple-400 mb-2 fredoka">OFICINA</p>
+              <p>Lun-Vie: 09:00-18:00</p>
+              <p>Sáb: 10:00-14:00</p>
+            </div>
+            <div class="shine-card p-4 rounded-lg">
+              <p class="font-bold text-purple-500 mb-2 fredoka">EVENTOS</p>
+              <p>Disponible 24/7</p>
+              <p>Para momentos especiales</p>
             </div>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Cloudwis. Todos los derechos reservados</p>
-            <p>Servicios de alojamiento de calidad en San Pedro</p>
+      
+      <div class="border-t-2 border-purple-600 pt-12 text-center">
+        <div class="shine-icon mx-auto mb-6 pulse-purple">
+          <div class="text-white font-bold text-xl emoji-bounce">✨</div>
+        </div>
+        <p class="text-purple-400 mb-3 text-xl font-bold fredoka">CLOUDWIS - BRILLANDO CON ESTILO Y DIVERSIÓN</p>
+        <p class="text-gray-400">© 2024 Todos los derechos reservados | Crea momentos mágicos</p>
+      </div>
     </div>
   </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add scrolling effect to navigation
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(21, 101, 192, 0.98)';
-            } else {
-                nav.style.background = 'rgba(21, 101, 192, 0.95)';
-            }
-        });
-    </script>
-
-    <!-- WhatsApp Float Button -->
-    <a href="https://wa.me/5491164584704?text=Hola%2C%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20sus%20servicios%20de%20alojamiento" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+  <!-- FUN WHATSAPP BUTTON -->
+  <a 
+    href="https://wa.me/5491164584704?text=¡Hola%20Cloudwis!%20✨%20Me%20interesa%20conocer%20sus%20servicios%20mágicos" 
+    target="_blank"
+    class="fixed bottom-8 right-8 whatsapp-sparkle text-white p-6 rounded-full shadow-2xl z-50 transition-all duration-300 hover:scale-110 group"
+    aria-label="Contactar por WhatsApp"
+  >
+    <div class="relative">
+      <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+      </svg>
+      <!-- Fun notification -->
+      <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full flex items-center justify-center text-xs font-bold pulse-purple">
+        ✨
+      </div>
+    </div>
+  </a>
 
 </body>
 </html>
